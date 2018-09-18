@@ -1,0 +1,143 @@
+server:
+  port: 9001
+
+system:
+  giftCoupon-distance: 10
+  arCoupon-search-distance: 10
+  arCoupon-get-distance: 0.5
+  trueVoice-pCategory: 2
+  defalut-head:
+
+app:
+  test-mode: true
+  sign-skip: true
+  secret: abcdefgh12345678
+  wxApiIP: http://192.168.1.79:7010
+
+  wxApiUrl:
+    scoreChange: /api/b/membercard/userinfo/update
+
+  aliyun:
+    sms:
+      #access-key: LTAIcUk6Fd0BV5Js
+      access-key: LTAITgXKAP8jO2E1
+      access-secret: EuiGavVtolz2zaCarnICWvkaxjaGQZ
+      #access-secret: uo6CLLGEJQdINobZWfzhxhxghviZ97
+  alipay:
+    partner: 2088821716232101
+    privateKey: MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCY75PYEktl9X9VTkKVPO0qwLzdLLVaPWiS45f2kzkMzqDQraqqWKndvKmU4I3v++MU1zFrqeeCAEidkx2P0z18yCpnFhC5QiqVbrLHxU/ZqNzvPxQdETKgERXJQbJJTT5RC/VvzqWXMedwt43G8hZ/ApFcq6VrXs67VzPff57CiOHPAiOUBDc/fjOTKFOlbxoh1GwLQVlGOtgXKB378iOm4TrG+SOqhs2ybbKsT3k7R5fW+Rj0/GnhY5WzuEptKH7BVWTKLwZphWYKHzoxsp4Oi3o0/DTdP3775GNa8u7++8JFEsgDRVsnBO1m6LbU6AcDce2WpkKvp86dELTpS3HLAgMBAAECggEAHbMQ2/oZiFBXjQJorcCqMg5B3xXKlh6syzHFlg3bG2CZHE1Ngk07l6MGr7G3/q3E2Iw9vbG+EqHpeChUqlSUcUIR8fj4AHIYAPMBZwgrTJKdbRyr1EU9tpX6zB2k+NU2T9jpre/MeoMndd0/fC4RLlMaVYvD0QkVTo5NtY58DzzmRMR5Z3EXTRzlITQFHKnGsN6vgNFVq3wqRQLHH355MnhJjTs6j02P+uAA7IgXT/Y+D/oLvQUVHHi1fgv20VsPJ8DVVRjTrSi1la2EkYU6J9tpSJyP6jU5/fnUEKX8xFO7lJQDTzCMpuqTmvJqeIQ5pHCDGIbeqytpMpLN2pwbuQKBgQDitp4SGTelXuUOJkUVygcqu/2VNOzAvjY5/p5k+bO5Y8EMEMlQSnJkAZu9/3yd9KYol6EDHH2X/InAAw+PzjF5wcy1DjpLx7cTKHLNuf6ct3UMk9oedIXCYJYaLXlDyj6ZvspXSrSsETYS3QLdwJjcOqrdIoBwZWcfruxmHPe/9wKBgQCssSWwaGJZZB/ZfYT/cozb0C2bSZx0texS7HIQqcmTLTstDUSRct1K93vEq61D6V4cMHolMR/bDhwdCrk+8wG11JbYcqJ24s8X4JXUdbxrcZE5yxh2TPG7anNljMcaIeGgzeZIYwpM+fHNdBz5WD4lmfew3icqSohdYq+8A0LPzQKBgQDAZ2FhVLtwAkf8qSfqZQmOD/sW3NKshQE6WMeORIhtpqYYGkrvdC7+horpRWE6IH2/Z2fDXzOLgExbg316evBsN7gGVGvPElBh1usPg3D9CYkxwmzTeepm21eoIb2PdZ2JF21bhdAtU3IDskOTdLeF99g4UeaU/Mn3Dpob0yvDYwKBgBUFBupe+kGZL0tAvPR+0+hZgYOaRSHrltVNFGE02WVBpydHqyXtDkR2tSjuIIvYluzldaibPx5hrEhYqs2ftICWXLoB0gaYes6UNoiCwClvzFZ1gwe7O90tCti8duuWXik9hp8e9v0Bm03/qRssg3v+LqjnkWrTYZ/ESFGhL/utAoGADMTQjxN3juNXo1x51NjJkFrRN7TAKy/JSLyF/9j4JUVubf6X/yE+4ihzoi4pzVtkiuEXMwA1FbWcBLYXAG8VC638mhFEv75j4EGunRywFGQA2uLR2gxDP5JHlL3KeSkLzMwjyHPZkQa/fnRPY4o+ksOSoqhXuhU6urHMHPZzqec=
+    publicKey: MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDDI6d306Q8fIfCOaTXyiUeJHkrIvYISRcc73s3vF1ZT7XN8RNPwJxo8pWaJMmvyTn9N4HQ632qJBVHf8sxHi/fEsraprwCtzvzQETrNRwVxLO5jVmRGi60j8Ue1efIlzPXV9je9mkjzOmdssymZkh2QhUrCmZYI/FCEa3/cNMW0QIDAQAB
+    appId: 2017112900246900
+    httpsVerifyUrl: https://mapi.alipay.com/gateway.do?service=notify_verify&
+  wxpay:
+    #appId: wx6a31fcb45486a89a
+    appId: wx0802ae30234e2125
+    #mchId: 1421591702
+    mchId: 1493794792
+    payKey: tianyihui123afaeotpqjasdifhpasdi
+  express:
+    code: 1eb4a6c56e114f80ab0dc13310aee0f1
+    host: http://jisukdcx.market.alicloudapi.com
+    queryPath: /express/query
+    typePath: /express/type
+  bankBranch:
+    code: 1eb4a6c56e114f80ab0dc13310aee0f1
+    host: http://lhh.market.alicloudapi.com
+
+shopapp:
+  secret: shopabcdefgh12345678
+
+endpoints:
+  restart:
+    enabled: true
+
+logging:
+  level:
+    org.apache.zookeeper.ClientCnxn: ERROR
+
+
+spring:
+  jackson:
+    default-property-inclusion: non_null
+  thymeleaf:
+    mode: LEGACYHTML5
+
+  datasource:
+    name: old-db
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://114.80.200.31:3306/arbitrage?allowMultiQueries=true&useSSL=true
+    username: root
+    password: 11111
+    filters: stat
+    maxActive: 20
+    initialSize: 1
+    maxWait: 60000
+    minIdle: 1
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: select 'x'
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxOpenPreparedStatements: 20
+
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    pool:
+      max-idle: 8
+
+  rabbitmq:
+      host: 127.0.0.1
+      port: 5672
+      username: guest
+      password: guest
+
+mybatis:
+  type-aliases-package: com.ebay.models
+  check-config-location: true
+  mapper-locations:
+    - classpath:/mappers/*.xml
+
+ons:
+  produce:
+    accessKey: LTAIkOgQrQB7rcVP
+    accessSecret: MyJAZQVTqI1vxxfZlrfAxNLBVESEdR
+
+log4j:
+  logger:
+    com:
+      ibatis:
+        common:
+          jdbc:
+            ScriptRunner: ERROR
+
+#rb:
+#  notifyUrl: http://e616eb99.ngrok.io/rb/result
+#  pubKeyUrl: D:/cert/itrus001.cer
+#  privateKey: D:/cert/itrus001.pfx
+#  url: http://testagentpay.reapal.com/agentpay/
+#  password: 123456
+#  userKey: g0be2385657fa355af68b74e9913a1320af82gb7ae5f580g79bffd04a402ba8f
+#  merchantID: 100000000000147
+#  version: 1.0
+#  charset: UTF-8
+#  signType: MD5
+#rb:
+#  notifyUrl: http://e616eb99.ngrok.io/rb/result
+#  pubKeyUrl: D:/cert/rongbao.cer
+#  privateKey: D:/cert/user-rsa.pfx
+#  url: https://agentpay.reapal.com/
+#  password: 168888
+#  userKey: ac4bd559gd9gfa4gdebbbdf2gb746gf80be8e50987cfge79fa192fe4b2ad817f
+#  merchantID: 100000001301712
+#  version: 1.0
+#  charset: UTF-8
+#  signType: MD5
+
+
+
+
+

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ebay.mappers.AccountMapper">
+    <resultMap id="baseResultMap" type="com.ebay.models.Account">
+        <id property="id" column="id"></id>
+        <result property="userId" column="userId"></result>
+        <result property="bankcardNum" column="bankcardNum"></result>
+        <result property="cardId" column="cardId"></result>
+        <result property="name" column="name"></result>
+        <result property="reservedPhone" column="reservedPhone"></result>
+        <result property="isDelete" column="isDelete"></result>
+        <result property="createAt" column="createAt"></result>
+        <result property="updateAt" column="updateAt"></result>
+    </resultMap>
+
+    <select id="findById" resultMap="baseResultMap">
+        select *
+        from `account`
+        WHERE id=#{id} limit 0,1
+    </select>
+
+    <select id="getAccountList" resultMap="baseResultMap">
+        select *
+        from `account`
+        where userId=#{userId}
+        <if test="isDelete != null"> and isDelete=#{isDelete}</if>
+        ORDER BY createAt desc
+        <if test="start != null"> limit #{start}, #{size}</if>
+    </select>
+
+    <select id="count" resultType="java.lang.Integer">
+        select count(*)
+        from `account`
+        where userId=#{userId}
+        <if test="isDelete != null"> and isDelete=#{isDelete}</if>
+    </select>
+
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id">
+        insert into account (userId,bankcardNum,cardId,name,reservedPhone,isDelete,createAt
+        )
+        values (#{userId},#{bankcardNum},#{cardId},#{name},#{reservedPhone},#{isDelete},now()
+        )
+    </insert>
+
+    <update id="update" >
+        UPDATE account SET updateAt=now()
+        <if test="bankcardNum != null">,bankcardNum=#{bankcardNum}</if>
+        <if test="cardId != null">,cardId=#{cardId}</if>
+        <if test="name != null">,name=#{name}</if>
+        <if test="reservedPhone != null">,reservedPhone=#{reservedPhone}</if>
+        <if test="isDelete != null">,isDelete=#{isDelete}</if>
+        WHERE id=#{id}
+    </update>
+</mapper>

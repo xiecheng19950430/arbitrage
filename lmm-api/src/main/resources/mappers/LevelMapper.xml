@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ebay.mappers.LevelMapper">
+    <resultMap id="baseResultMap" type="com.ebay.models.Level">
+        <id property="id" column="id"></id>
+        <result property="level" column="level"></result>
+        <result property="scale" column="scale"></result>
+        <result property="isDelete" column="isDelete"></result>
+        <result property="createAt" column="createAt"></result>
+        <result property="updateAt" column="updateAt"></result>
+    </resultMap>
+
+    <select id="findById" resultMap="baseResultMap">
+        select *
+        from `level`
+        WHERE id=#{id} limit 0,1
+    </select>
+
+    <select id="getLevelList" resultMap="baseResultMap">
+        select *
+        from `level`
+        where 1=1
+        <if test="level != null"> and level=#{level}</if>
+        <if test="scale != null"> and scale=#{scale}</if>
+        <if test="isDelete != null"> and isDelete=#{isDelete}</if>
+        ORDER BY createAt desc
+        <if test="start != null"> limit #{start}, #{size}</if>
+    </select>
+
+    <select id="count" resultType="java.lang.Integer">
+        select count(*)
+        from `level`
+        where 1=1
+        <if test="level != null"> and level=#{level}</if>
+        <if test="scale != null"> and scale=#{scale}</if>
+        <if test="isDelete != null"> and isDelete=#{isDelete}</if>
+    </select>
+
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id">
+        insert into level (level,scale,isDelete,createAt
+        )
+        values (#{level},#{scale},#{isDelete},now()
+        )
+    </insert>
+
+    <update id="update" >
+        UPDATE level SET updateAt=now()
+        <if test="level != null">,level=#{level}</if>
+        <if test="scale != null">,scale=#{scale}</if>
+        <if test="isDelete != null">,isDelete=#{isDelete}</if>
+        WHERE id=#{id}
+    </update>
+
+
+</mapper>
